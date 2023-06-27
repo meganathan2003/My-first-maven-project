@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.fssa.meganathan.sampleprog.day17.solved.HelloTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in com.fssa.meganathan.sampleprog.day17.solved.HelloTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in com.fssa.meganathan.sampleprog.day17.solved.HelloTest
