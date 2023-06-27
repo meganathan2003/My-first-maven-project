@@ -7,9 +7,9 @@ public class TestValidation {
 
 	// TestCase Methods
 
-	@Test
+	@Test 
 	public void positiveAgeTestcase() {
-		Assertions.assertTrue(AgeValidator.validateage(9));
+		Assertions.assertTrue(AgeValidator.validateage(-10));
 	}
 
 	@Test
