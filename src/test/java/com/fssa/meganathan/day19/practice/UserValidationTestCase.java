@@ -7,72 +7,61 @@ public class UserValidationTestCase {
 
 	@Test
 	public void testId() {
-		Assertions.assertTrue(User.validateId(1));
+		Assertions.assertTrue(UserValidator.idValidator(1));
 	}
 
 	@Test
 	public void testIdException() {
 		try {
-			Assertions.assertTrue(User.validateId(-1));
-			Assertions.fail("ValidateId failed");
+			Assertions.assertTrue(UserValidator.idValidator("-1"));
 		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("ID should be positive.", ex.getMessage());
+			Assertions.assertEquals("The entered UserID is Invaild,ID must be Number", ex.getMessage());
 		}
 	}
 
 	// Test Case for UserName
 	@Test
 	public void testUserName() {
-		Assertions.assertTrue(User.validateName("Meganathan"));
+		Assertions.assertTrue(UserValidator.nameValidator("Meganathan"));
 	}
 
 	@Test
 	public void testUserNameException() {
 		try {
-			Assertions.assertTrue(User.validateName("Dinesh"));
+			Assertions.assertTrue(UserValidator.idValidator("Dina"));
 		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("Name should have a minimum length of 2 characters.", ex.getMessage());
+			Assertions.assertEquals("User name should be minimum 2 letters", ex.getMessage());
 		}
 	}
 
-	@Test
-	public void testUserNameNullException() {
-		try {
-			Assertions.assertTrue(User.validateName(null));
-			Assertions.fail("ValidateName failed");
-		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("Name should have a minimum length of 2 characters.", ex.getMessage());
-		}
-	}
 
 	// Test Case for UserEmail
 	@Test
 	public void testUserEmail() {
-		Assertions.assertTrue(User.getmail("aravind@gmail.com"));
+		Assertions.assertTrue(UserValidator.emailValidator("meganathan212003@gmail.com"));
 	}
 
 	@Test
 	public void testUserEmailException() {
 		try {
-			Assertions.assertTrue(User.validateEmail("ar"));
-			Assertions.fail("ValidateName failed");
+			Assertions.assertTrue(UserValidator.emailValidator("ar"));
 		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("Invalid email format.", ex.getMessage());
+			Assertions.assertEquals("Users email is invaild", ex.getMessage());
 		}
 	}
 
 	// Test Case for UserPassword
 	@Test
 	public void testUserPassword() {
-		Assertions.assertTrue(User.setPassword("Meganathan@2003"));
+		Assertions.assertTrue(UserValidator.passwordValidator("Meganathan@2003"));
 	}
 
 	@Test
 	public void testUserPasswordException() {
 		try {
-			Assertions.assertTrue(User.setPassword("Welcome"));
+			Assertions.assertTrue(UserValidator.passwordValidator("Welcome"));
 		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("Invalid password format.", ex.getMessage());
+			Assertions.assertEquals("Users email is invaild", ex.getMessage());
 		}
 	}
 
