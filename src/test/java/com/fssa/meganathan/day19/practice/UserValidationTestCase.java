@@ -7,7 +7,7 @@ public class UserValidationTestCase {
 
 	@Test
 	public void testId() {
-		Assertions.assertTrue(UserValidator.idValidator(1));
+		Assertions.assertTrue(UserValidator.idValidator("1"));
 	}
 
 	@Test
