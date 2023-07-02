@@ -7,13 +7,13 @@ public class UserValidationTestCase {
 
 	@Test
 	public void testId() {
-		Assertions.assertTrue(UserValidator.idValidator("1"));
+		Assertions.assertTrue(UserValidator.idValidator("7"));
 	}
 
 	@Test
 	public void testIdException() {
 		try {
-			Assertions.assertTrue(UserValidator.idValidator("-1"));
+			Assertions.assertTrue(UserValidator.idValidator("-0"));
 		} catch (IllegalArgumentException ex) {
 			Assertions.assertEquals("The entered UserID is Invaild,ID must be Number", ex.getMessage());
 		}

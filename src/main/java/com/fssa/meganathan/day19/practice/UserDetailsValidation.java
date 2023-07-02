@@ -72,7 +72,7 @@ class UserValidator {
 		String intregex = "^[1-9]\\d{7}$";
 		Pattern pattern = Pattern.compile(intregex);
 		Matcher matcher = pattern.matcher(id);
-		Boolean isMatch = matcher.matches();
+		boolean isMatch = matcher.matches();
 
 		if (!isMatch) {
 			throw new IllegalArgumentException("The entered UserID is Invaild,ID must be Number");
