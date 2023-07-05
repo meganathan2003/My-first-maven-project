@@ -46,7 +46,7 @@ public class StudentValidator {
 
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(email);
-		Boolean isMatch = matcher.matches();
+		boolean isMatch = matcher.matches();
 //				Boolean isMatch = Pattern.matches(regex, email);
 
 		if (isMatch) {
