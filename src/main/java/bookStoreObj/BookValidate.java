@@ -97,9 +97,12 @@ class BookDetailsValidator {
 			}	
 
 	static boolean validateBookname(String bookname){
-		if (bookname.equals(null) || bookname.trim().toLowerCase().length() <= 40 || bookname.trim().toLowerCase().length() >= 15){
-			throw new IllegalArgumentException("Book should atleast 10 characters");
-		} else {
+		if (bookname.equals(null) || bookname.trim().toLowerCase().length() <= 40 || bookname.trim().toLowerCase().length() >= 10)
+		{
+			throw new IllegalArgumentException("Book name should atleast 10 characters");
+		}
+		else
+		{
 			return true;
 		}
 	}
@@ -139,7 +142,7 @@ class BookDetailsValidator {
 	}
 	
 	static boolean ValidateBookLang(String Booklang) {
-		if(Booklang == null || Booklang.trim().length() < 15 || Booklang.trim().length() >= 4  ) {
+		if(Booklang == null || Booklang.trim().toLowerCase().length() <= 15 || Booklang.trim().toLowerCase().length() >= 4  ) {
 			throw new IllegalArgumentException("You Given Wrong Language or Invalid langugages");
 		}
 		else

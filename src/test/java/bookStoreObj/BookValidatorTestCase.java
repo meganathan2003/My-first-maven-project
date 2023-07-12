@@ -9,16 +9,17 @@ class BookValidatorTestCase {
 	// Below the code for valid
 	@Test
 	void TestValidbookname() {
-		BookDetailsValidator.validateBookname("");
+		BookDetailsValidator.validateBookname("Attitude is Everything By jeff keller");
 	}
 
 	// Below the code for invalid
 	@Test
 	void TestInvalid() {
 		try {
-			BookDetailsValidator.validateBookname("Bom");
-		} catch (IllegalArgumentException ex) {
-			Assertions.assertEquals("Book should atleast 10 characters", ex.getMessage());
+			BookDetailsValidator.validateBookname("B");
+		}
+		catch (IllegalArgumentException ex) {
+			Assertions.assertEquals("Book name should atleast 10 characters", ex.getMessage());
 
 		}
 
